@@ -1,0 +1,24 @@
+import java.util.ArrayList;
+
+public class FibonacciNumber {
+
+	public static void main(String[] args) {
+		long a = 0;
+		long b = 1;
+		ArrayList<Long> numbers = new ArrayList<Long>();
+		numbers.add(a);
+		numbers.add(b);
+		long i = 3;
+		while (i < 53){
+			long c = a + b;
+			a = b;
+			b = c;
+			numbers.add(c);
+			i++;
+		}
+		long result = numbers.get(50);
+		System.out.println(result);
+
+	}
+
+}
