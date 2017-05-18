@@ -1,0 +1,31 @@
+import java.util.Arrays;
+
+public class PermSort {
+
+    public static void main(String[] args) {
+	int[] numbers = {5, 25, 31, 9, 2, 4, 32, 13};
+	while (!isSorted(numbers)) {
+	    sort(numbers);
+	}
+	System.out.println(Arrays.toString(numbers));
+    }
+
+    public static boolean isSorted(int[] numbers) {
+	for (int i = 1; i < numbers.length; i++) {
+	    if (numbers[i - 1] > numbers[i]) {
+		return false;
+	    }
+	}
+	return true;
+    }
+
+    public static void sort(int[] numbers) {
+	for (int x = 0; x < numbers.length; ++x) {
+	    int index1 = (int) (Math.random() * numbers.length), index2 = (int) (Math.random() * numbers.length);
+	    int a = numbers[index1];
+	    numbers[index1] = numbers[index2];
+	    numbers[index2] = a;
+	}
+    }
+
+}
