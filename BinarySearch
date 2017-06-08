@@ -1,0 +1,26 @@
+import java.util.Arrays;
+
+public class BinarySearch {
+
+	public static void main(String[] args) {
+		int[] a = {5,12,13,2,14,21,17,35,54};
+		Arrays.sort(a);
+		int searchedValue = 21;
+		System.out.println(Arrays.toString(a));
+		System.out.println(binarySearch(a,searchedValue));
+
+	}
+	private static int binarySearch(int[] a, int searchedValue){
+		int left = -1;
+		int size = a.length;
+		int right = size;
+		while (left<right-1){
+			int middle =left+ (right-left)/2;
+			if(a[middle]<searchedValue)
+				left = middle;
+			else
+				right = middle;	
+			}
+		return right;
+		}
+	}
